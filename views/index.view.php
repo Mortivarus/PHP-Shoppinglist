@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <nav>
+        <ul>
+            <li><a href="views/create.view.php">Add Groceries</a></li>
+            <li><a href="views/index.view.php">View Groceries</a></li>
+        </ul>
+    </nav>
+
     <table>
         <tr>
             <th>Product</th>

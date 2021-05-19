@@ -1,12 +1,12 @@
 <?php
 
+$query = require 'bootstrap.php';
+
 
 require 'functions.php';
-require 'Groceries.php';
 
+$groceries = $query->selectAll('groceries');
 
-$pdo = connectToDb();
+require 'views/index.view.php';
 
-$groceries = fetchAllGroceries($pdo);
-
-require 'index.view.php';
+require 'views/create.view.php';
