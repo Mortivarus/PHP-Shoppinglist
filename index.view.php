@@ -12,14 +12,15 @@
             <th>Product</th>
             <th>Prijs</th>
             <th>Aantal</th>
-            <!-- <th>Subtotaal</th> -->
+            <th>Subtotaal</th>
         </tr>
     
     <?php foreach($groceries as $item): ?>
         <tr>
-            <td><?= $item["Product"];  ?></td>
-            <td><?= $item["Prijs"];  ?></td>
-            <td><?= $item["Aantal"];  ?></td>
+            <td><?= $item->name;  ?></td>
+            <td><?= $item->price;  ?></td>
+            <td><?= $item->number;  ?></td>
+            <td><?= $item->number * $item->price;  ?></td>
         </tr>
     <?php endforeach; ?>
 
