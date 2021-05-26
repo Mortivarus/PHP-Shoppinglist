@@ -10,8 +10,8 @@
 
     <nav>
         <ul>
-            <li><a href="views/create.view.php">Add Groceries</a></li>
-            <li><a href="views/index.view.php">View Groceries</a></li>
+            <li><a href="create">Add Groceries</a></li>
+            <li><a href="/">View Groceries</a></li>
         </ul>
     </nav>
 

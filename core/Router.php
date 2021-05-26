@@ -5,11 +5,12 @@ class Router{
     protected $routes = [];
 
     public static function load($file){
+            
         $router = new static;
 
         require $file;
 
-        require $router;
+        return $router;
     }
 
     public function define($routes){
@@ -21,6 +22,6 @@ class Router{
             return $this->routes[$uri];
         }
 
-        throw new Exception('No route defined for this URI.');
+        throw new Exception("No route defined for this URI: '$uri'.");
     }
 }
