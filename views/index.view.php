@@ -15,7 +15,8 @@
         </ul>
     </nav>
 
-    <table>
+
+   <table>
         <tr>
             <th>Product</th>
             <th>Prijs</th>
