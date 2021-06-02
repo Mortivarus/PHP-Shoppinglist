@@ -17,12 +17,26 @@ class QueryBuilder{
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
-    public function addToTable($table, $var1, $var2, $var3){
-        $statement = $this->pdo->prepare(
-            "insert into {$table} ({$var1}, {$var2}, {$var3})
-            values ({$_POST[$var1]}, {$_POST[$var2]}, {$_POST[$var3]})"
-        );
+    public function insert($table, $parameters){
+        
+        try{
+            $sql = sprintf(
+                        'insert into %s (%s) values (%s)', 
+                        $table, 
+                        implode(', ', array_keys($parameters)), 
+                        ':'. implode(', :', array_keys($parameters))
+                    );
+                    
+            $statement = $this->pdo->prepare($sql);
+                    
+            $statement->execute($parameters);
+        } catch (Exception $e){
+            die($e->getMessage());
+        }
 
-        $statement->execute();
+
+
+        
+        
     }
 }
