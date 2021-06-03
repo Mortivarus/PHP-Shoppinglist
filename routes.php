@@ -1,8 +1,8 @@
 <?php
 
-$router->get('', 'controllers/index.php');
+$router->get('', 'PagesController@index');
 
-$router->get('create', 'controllers/create.php');
+$router->get('create', 'PagesController@create');
 
-$router->post('groceries', 'controllers/add-item.php');
+$router->post('groceries', 'GroceriesController@create');
 
